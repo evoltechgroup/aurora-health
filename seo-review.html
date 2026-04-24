@@ -1,0 +1,2297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Health — SEO Review Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #f4f6f8;
+        color: #1a1a2e;
+        padding: 32px 20px;
+      }
+
+      /* ── Cover header ─────────────────────────────── */
+      .cover {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 60%,
+          #0f3460 100%
+        );
+        color: #fff;
+        border-radius: 16px;
+        padding: 48px 40px 40px;
+        margin-bottom: 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .cover-left h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .cover-left p {
+        font-size: 14px;
+        color: #a8b4cc;
+        margin-top: 6px;
+      }
+      .cover-meta {
+        text-align: right;
+        font-size: 13px;
+        color: #a8b4cc;
+        line-height: 1.8;
+      }
+      .cover-meta span {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .badge-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      .badge-green {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .badge-orange {
+        background: #ffedd5;
+        color: #9a3412;
+      }
+      .badge-red {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .badge-blue {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+      .badge-gray {
+        background: #e5e7eb;
+        color: #374151;
+      }
+
+      /* ── Toolbar ──────────────────────────────────── */
+      .toolbar {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px 24px;
+        margin-bottom: 28px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      .toolbar-label {
+        font-size: 13px;
+        color: #6b7280;
+        font-weight: 500;
+        margin-right: 4px;
+      }
+      button {
+        padding: 8px 18px;
+        border-radius: 8px;
+        border: none;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .btn-primary {
+        background: #0f3460;
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: #1a4a8a;
+      }
+      .btn-secondary {
+        background: #f3f4f6;
+        color: #374151;
+        border: 1px solid #d1d5db;
+      }
+      .btn-secondary:hover {
+        background: #e5e7eb;
+      }
+      .btn-danger {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .btn-danger:hover {
+        background: #fecaca;
+      }
+
+      .search-box {
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 13px;
+        outline: none;
+        min-width: 220px;
+        margin-left: auto;
+      }
+      .search-box:focus {
+        border-color: #0f3460;
+        box-shadow: 0 0 0 2px #dbeafe;
+      }
+
+      /* ── Progress bar ─────────────────────────────── */
+      .progress-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-bottom: 28px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      .progress-section h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #374151;
+        margin-bottom: 14px;
+      }
+      .progress-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
+      }
+      .progress-item label {
+        font-size: 12px;
+        color: #6b7280;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .progress-bar-wrap {
+        background: #e5e7eb;
+        border-radius: 4px;
+        height: 6px;
+      }
+      .progress-bar-fill {
+        height: 6px;
+        border-radius: 4px;
+        background: #0f3460;
+      }
+
+      /* ── Page section ─────────────────────────────── */
+      .page-section {
+        background: #fff;
+        border-radius: 14px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+      .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 18px 28px;
+        background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+        border-bottom: 1px solid #e8edf3;
+        cursor: pointer;
+        user-select: none;
+      }
+      .page-header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .page-num {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: #0f3460;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .page-header h2 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1a1a2e;
+      }
+      .page-url {
+        font-size: 12px;
+        color: #6b7280;
+        font-family: monospace;
+        background: #e8edf3;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .page-badges {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .page-body {
+        padding: 24px 28px;
+        display: grid;
+        gap: 16px;
+      }
+      .page-body.collapsed {
+        display: none;
+      }
+
+      .field-group {
+        display: grid;
+        gap: 6px;
+      }
+      .field-group label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .field-group label .tag {
+        font-size: 10px;
+        font-weight: 600;
+        padding: 1px 7px;
+        border-radius: 10px;
+        letter-spacing: 0;
+      }
+      .tag-seo {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+      .tag-og {
+        background: #ede9fe;
+        color: #6d28d9;
+      }
+      .tag-tw {
+        background: #ccfbf1;
+        color: #0f766e;
+      }
+      .tag-global {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .tag-tech {
+        background: #fce7f3;
+        color: #9d174d;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 9px 12px;
+        border: 1px solid #d8dde6;
+        border-radius: 8px;
+        font-size: 13px;
+        font-family: inherit;
+        background: #fafbfc;
+        color: #1a1a2e;
+        outline: none;
+        transition:
+          border-color 0.15s,
+          box-shadow 0.15s;
+        resize: vertical;
+      }
+      input[type="text"]:focus,
+      textarea:focus {
+        border-color: #0f3460;
+        box-shadow: 0 0 0 3px #dbeafe;
+        background: #fff;
+      }
+      input[type="text"].modified,
+      textarea.modified {
+        border-color: #f59e0b;
+        background: #fffbeb;
+      }
+
+      .char-counter {
+        font-size: 11px;
+        text-align: right;
+        color: #9ca3af;
+        margin-top: 2px;
+      }
+      .char-counter.warn {
+        color: #d97706;
+        font-weight: 600;
+      }
+      .char-counter.over {
+        color: #dc2626;
+        font-weight: 600;
+      }
+
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 680px) {
+        .field-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .robots-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 10px 14px;
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px solid #e8edf3;
+      }
+      .robots-row label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #374151;
+        text-transform: none;
+        letter-spacing: 0;
+        cursor: pointer;
+      }
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #0f3460;
+        cursor: pointer;
+      }
+
+      .json-block {
+        background: #1e2030;
+        color: #cdd6f4;
+        font-family: "Menlo", "Fira Code", monospace;
+        font-size: 12px;
+        padding: 16px;
+        border-radius: 8px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+        overflow-x: auto;
+      }
+
+      .section-divider {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #9ca3af;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 4px 0 8px;
+      }
+      .section-divider::before,
+      .section-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+      }
+
+      .note-box {
+        padding: 10px 14px;
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #78350f;
+      }
+      .note-box.info {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+        color: #1e3a8a;
+      }
+
+      /* ── Global section ───────────────────────────── */
+      .global-section {
+        background: #fff;
+        border-radius: 14px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+      .global-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 28px;
+        background: linear-gradient(90deg, #fef3c7 0%, #fff9e6 100%);
+        border-bottom: 1px solid #fde68a;
+        cursor: pointer;
+        user-select: none;
+      }
+      .global-header h2 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #78350f;
+      }
+      .global-num {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: #f59e0b;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* ── Print / PDF ──────────────────────────────── */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+          font-size: 12px;
+        }
+        .toolbar,
+        .search-box,
+        .char-counter {
+          display: none !important;
+        }
+        .page-body.collapsed {
+          display: grid !important;
+        }
+        /* Allow sections to break across pages — avoids clipping tall sections */
+        .page-section,
+        .global-section {
+          box-shadow: none;
+          border: 1px solid #e5e7eb;
+          page-break-inside: auto;
+          break-inside: auto;
+          margin-bottom: 16px;
+        }
+        /* Keep each field group together on the same page */
+        .field-group {
+          page-break-inside: avoid;
+          break-inside: avoid;
+        }
+        /* Single column in print — two columns make content too narrow and clip */
+        .field-row {
+          grid-template-columns: 1fr !important;
+        }
+        .cover {
+          border-radius: 0;
+          page-break-after: always;
+          break-after: page;
+        }
+        button {
+          display: none !important;
+        }
+        /* Hide real inputs and textareas — JS replaces them with .print-value divs */
+        input[type="text"],
+        textarea {
+          display: none !important;
+        }
+        input[type="checkbox"] {
+          display: inline !important;
+        }
+        /* Full-height text blocks injected by JS before print */
+        .print-value {
+          display: block !important;
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 13px;
+          font-family: inherit;
+          color: #1a1a2e;
+          word-wrap: break-word;
+          word-break: break-word;
+          white-space: pre-wrap;
+          min-height: 34px;
+          background: #fff;
+          line-height: 1.55;
+        }
+        .print-value.print-readonly {
+          background: #f3f4f6;
+          color: #6b7280;
+          font-family: monospace;
+        }
+        .json-block {
+          background: #f9fafb;
+          color: #374151;
+          border: 1px solid #e5e7eb;
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══ COVER ═══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-left">
+        <h1>Aurora Health — SEO Metadata Review</h1>
+        <p>Client review document · All pages · aurorahealth.us</p>
+        <div class="badge-row">
+          <span class="badge badge-green">✓ 13 Pages Covered</span>
+          <span class="badge badge-blue">✓ Open Graph</span>
+          <span class="badge badge-blue">✓ Twitter Cards</span>
+          <span class="badge badge-green">✓ JSON-LD Structured Data</span>
+          <span class="badge badge-green">✓ Sitemap.xml</span>
+          <span class="badge badge-green">✓ robots.txt</span>
+          <span class="badge badge-orange">⚠ OG Images Pending</span>
+        </div>
+      </div>
+      <div class="cover-meta">
+        <div>Prepared by <span>evoltech</span></div>
+        <div>Date <span>April 24, 2026</span></div>
+        <div>Domain <span>https://aurorahealth.us</span></div>
+        <div>Implementation <span>~90%</span></div>
+      </div>
+    </div>
+
+    <!-- ═══ TOOLBAR ══════════════════════════════════════════ -->
+    <div class="toolbar no-print">
+      <span class="toolbar-label">Actions:</span>
+      <button class="btn-primary" onclick="window.print()">
+        ⬇ Export as PDF
+      </button>
+      <button class="btn-secondary" onclick="expandAll()">▼ Expand All</button>
+      <button class="btn-secondary" onclick="collapseAll()">
+        ▲ Collapse All
+      </button>
+      <button class="btn-secondary" onclick="highlightModified()">
+        ★ Show Edited Fields
+      </button>
+      <button class="btn-danger" onclick="resetAll()">
+        ↺ Reset All Changes
+      </button>
+      <input
+        class="search-box"
+        type="text"
+        placeholder="🔍 Search pages or fields..."
+        oninput="searchPages(this.value)"
+      />
+    </div>
+
+    <!-- ═══ IMPLEMENTATION PROGRESS ══════════════════════════ -->
+    <div class="progress-section">
+      <h3>Implementation Progress</h3>
+      <div class="progress-grid">
+        <div class="progress-item">
+          <label>Overall SEO (~90%)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Title Tags (13/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Descriptions (13/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Keywords (11/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Open Graph (12/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Twitter Cards (12/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Canonical URLs (12/13)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>JSON-LD (Org + WebSite)</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>Sitemap.xml</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>robots.txt</label>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <label>OG Images (0/13)</label>
+          <div class="progress-bar-wrap">
+            <div
+              class="progress-bar-fill"
+              style="width: 0%; background: #f59e0b"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ GLOBAL DEFAULTS (layout.tsx) ═════════════════════ -->
+    <div class="global-section">
+      <div class="global-header" onclick="toggleSection('global')">
+        <div class="global-num">G</div>
+        <h2>Global Defaults — layout.tsx (applies to all pages as fallback)</h2>
+        <span
+          style="margin-left: auto; font-size: 18px; color: #92400e"
+          id="global-icon"
+          >▼</span
+        >
+      </div>
+      <div class="page-body" id="global">
+        <div class="note-box info">
+          These values are the site-wide fallback. Every page overrides them
+          individually. The <code>metadataBase</code> is required for all
+          absolute URL resolution.
+        </div>
+
+        <div class="section-divider">Core SEO</div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Default Title <span class="tag tag-seo">SEO</span></label>
+            <input
+              type="text"
+              id="g-title-default"
+              value="Aurora Health | Your Prescription Advocacy Partner"
+              oninput="
+                markModified(this);
+                updateCounter('g-title-default-c', this.value, 60);
+              "
+            />
+            <div class="char-counter" id="g-title-default-c">43 / 60 chars</div>
+          </div>
+          <div class="field-group">
+            <label>Title Template <span class="tag tag-seo">SEO</span></label>
+            <input
+              type="text"
+              value="%s | Aurora Health"
+              readonly
+              style="background: #f3f4f6; color: #6b7280"
+            />
+          </div>
+        </div>
+        <div class="field-group">
+          <label
+            >Default Meta Description
+            <span class="tag tag-seo">SEO</span></label
+          >
+          <textarea
+            id="g-desc"
+            rows="2"
+            oninput="
+              markModified(this);
+              updateCounter('g-desc-c', this.value, 160);
+            "
+          >
+Aurora Health provides comprehensive prescription advocacy services to help you and your loved ones access affordable medications.</textarea
+          >
+          <div class="char-counter" id="g-desc-c">124 / 160 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="g-kw"
+            value="prescription advocacy, affordable medications, healthcare, patient assistance"
+            oninput="markModified(this)"
+          />
+        </div>
+
+        <div class="section-divider">Open Graph Defaults</div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>OG Site Name <span class="tag tag-og">OG</span></label>
+            <input type="text" value="Aurora Health" />
+          </div>
+          <div class="field-group">
+            <label>OG Locale <span class="tag tag-og">OG</span></label>
+            <input type="text" value="en_US" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>OG URL <span class="tag tag-og">OG</span></label>
+          <input type="text" value="https://aurorahealth.us" />
+        </div>
+        <div class="field-group">
+          <label
+            >metadataBase <span class="tag tag-tech">Technical</span></label
+          >
+          <input
+            type="text"
+            value="https://aurorahealth.us"
+            readonly
+            style="background: #f3f4f6; color: #6b7280; font-family: monospace"
+          />
+        </div>
+
+        <div class="section-divider">JSON-LD Structured Data</div>
+        <div class="field-group">
+          <label
+            >Organization JSON-LD
+            <span class="tag tag-tech">Technical</span></label
+          >
+          <div class="json-block">
+            { "@context": "https://schema.org", "@type": "Organization", "name":
+            "Aurora Health", "url": "https://aurorahealth.us", "logo":
+            "https://aurorahealth.us/assets/Images/logo.png", "description":
+            "Aurora Health provides prescription advocacy services to help
+            patients access affordable medications.", "contactPoint": { "@type":
+            "ContactPoint", "contactType": "customer service", "url":
+            "https://aurorahealth.us/contact" } }
+          </div>
+        </div>
+        <div class="field-group">
+          <label
+            >WebSite JSON-LD (Sitelinks Search)
+            <span class="tag tag-tech">Technical</span></label
+          >
+          <div class="json-block">
+            { "@context": "https://schema.org", "@type": "WebSite", "name":
+            "Aurora Health", "url": "https://aurorahealth.us",
+            "potentialAction": { "@type": "SearchAction", "target":
+            "https://aurorahealth.us/blogs?q={search_term_string}",
+            "query-input": "required name=search_term_string" } }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 1: HOMEPAGE ══════════════════════════════════ -->
+    <div
+      class="page-section"
+      data-search="homepage home / prescription advocacy"
+    >
+      <div class="page-header" onclick="toggleSection('p1')">
+        <div class="page-header-left">
+          <div class="page-num">1</div>
+          <div>
+            <h2>Homepage</h2>
+            <span class="page-url">https://aurorahealth.us/</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p1-icon">▼</span>
+      </div>
+      <div class="page-body" id="p1">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label
+            >Page Title <span class="tag tag-seo">SEO</span>
+            <small
+              style="font-weight: 400; text-transform: none; color: #9ca3af"
+              >· shown in browser tab &amp; Google results</small
+            ></label
+          >
+          <input
+            type="text"
+            id="p1-title"
+            value="Aurora Health | Prescription Advocacy &amp; Medication Affordability"
+            oninput="
+              markModified(this);
+              updateCounter('p1-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p1-title-c">
+            64 / 60 chars —
+            <span style="color: #d97706">slightly over, consider trimming</span>
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea
+            id="p1-desc"
+            rows="2"
+            oninput="
+              markModified(this);
+              updateCounter('p1-desc-c', this.value, 160);
+            "
+          >
+Aurora Health helps patients, employers, and advisors access affordable prescriptions through expert advocacy and financial assistance program navigation.</textarea
+          >
+          <div class="char-counter" id="p1-desc-c">152 / 160 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="prescription advocacy, medication affordability, patient assistance programs, affordable Rx, financial assistance for medications, healthcare advocacy"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Aurora Health | Prescription Advocacy &amp; Medication Affordability"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health helps patients, employers, and advisors access affordable prescriptions through expert advocacy and financial assistance program navigation.</textarea
+          >
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>OG URL <span class="tag tag-og">OG</span></label>
+            <input
+              type="text"
+              value="https://aurorahealth.us"
+              style="font-family: monospace"
+            />
+          </div>
+          <div class="field-group">
+            <label>OG Type <span class="tag tag-og">OG</span></label>
+            <input type="text" value="website" />
+          </div>
+        </div>
+
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-row">
+          <div class="field-group">
+            <label
+              >Twitter Card Type <span class="tag tag-tw">Twitter</span></label
+            >
+            <input type="text" value="summary_large_image" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Aurora Health | Prescription Advocacy &amp; Medication Affordability"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health helps patients, employers, and advisors access affordable prescriptions through expert advocacy and financial assistance program navigation.</textarea
+          >
+        </div>
+
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label
+            ><input type="checkbox" checked /> index — Allow search engines to
+            index this page</label
+          >
+          <label
+            ><input type="checkbox" checked /> follow — Allow crawling of
+            links</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 2: AURORA HELPS ══════════════════════════════ -->
+    <div
+      class="page-section"
+      data-search="aurora helps program prescription assistance"
+    >
+      <div class="page-header" onclick="toggleSection('p2')">
+        <div class="page-header-left">
+          <div class="page-num">2</div>
+          <div>
+            <h2>Aurora Helps Program</h2>
+            <span class="page-url">https://aurorahealth.us/aurora-helps</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p2-icon">▼</span>
+      </div>
+      <div class="page-body" id="p2">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p2-title"
+            value="Aurora Helps Program | Prescription Assistance for Everyone"
+            oninput="
+              markModified(this);
+              updateCounter('p2-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p2-title-c">58 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+The Aurora Helps program ensures everyone in need receives prescription assistance. Learn how we make a difference, one person at a time.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Aurora Helps, prescription assistance program, medication help, patient support, financial assistance for prescriptions"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/aurora-helps"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Aurora Helps Program | Prescription Assistance for Everyone"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+The Aurora Helps program ensures everyone in need receives prescription assistance. Learn how we make a difference, one person at a time.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Aurora Helps Program | Prescription Assistance for Everyone"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+The Aurora Helps program ensures everyone in need receives prescription assistance. Learn how we make a difference, one person at a time.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 3: BLOG INDEX ════════════════════════════════ -->
+    <div
+      class="page-section"
+      data-search="blogs blog index medication affordability tips"
+    >
+      <div class="page-header" onclick="toggleSection('p3')">
+        <div class="page-header-left">
+          <div class="page-num">3</div>
+          <div>
+            <h2>Blog Index</h2>
+            <span class="page-url">https://aurorahealth.us/blogs</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p3-icon">▼</span>
+      </div>
+      <div class="page-body" id="p3">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p3-title"
+            value="Blog | Medication Affordability Tips &amp; Industry Updates"
+            oninput="
+              markModified(this);
+              updateCounter('p3-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p3-title-c">56 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Practical tips, industry updates, and actionable advice to help patients, employers, and advisors navigate medication affordability with confidence.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="prescription affordability blog, medication cost tips, healthcare advocacy articles, GLP-1 costs, Medicare Part D updates, employer Rx savings"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/blogs"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Blog | Medication Affordability Tips &amp; Industry Updates"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Practical tips, industry updates, and actionable advice to help patients, employers, and advisors navigate medication affordability with confidence.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Blog | Medication Affordability Tips &amp; Industry Updates"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Practical tips, industry updates, and actionable advice to help patients, employers, and advisors navigate medication affordability with confidence.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 4: BLOG POSTS (Dynamic) ═════════════════════ -->
+    <div
+      class="page-section"
+      data-search="blog post detail dynamic slug article"
+    >
+      <div class="page-header" onclick="toggleSection('p4')">
+        <div class="page-header-left">
+          <div class="page-num">4</div>
+          <div>
+            <h2>Blog Posts (Dynamic — 3 posts)</h2>
+            <span class="page-url">https://aurorahealth.us/blogs/[slug]</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG Article ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Article JSON-LD ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p4-icon">▼</span>
+      </div>
+      <div class="page-body" id="p4">
+        <div class="note-box info">
+          These are auto-generated from blogData.ts. Title and description come
+          from each post's data. OG type is set to <code>article</code> with
+          <code>publishedTime</code> and <code>authors</code>.
+        </div>
+
+        <div class="section-divider">
+          Post 1 — rising-costs-glp1-medications
+        </div>
+        <div class="field-group">
+          <label>Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="The Rising Costs of GLP-1 Medications and how Aurora Health can Help! | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Current Cost Landscape The price of GLP-1 medications has been steadily increasing. For example, the cost of a monthly supply of Ozempic...</textarea
+          >
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Author <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Angela Hopper" />
+          </div>
+          <div class="field-group">
+            <label>Published Date <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Aug 9, 2024" />
+          </div>
+        </div>
+
+        <div class="section-divider">
+          Post 2 — employee-benefit-brokers-partner-aurora-health
+        </div>
+        <div class="field-group">
+          <label>Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Why employee benefit brokers should partner with Aurora Health advocacy group for high-cost specialty medication savings | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+In today's healthcare landscape, rising prescription costs pose a significant challenge for self-funded groups...</textarea
+          >
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Author <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Aurora Health Team" />
+          </div>
+          <div class="field-group">
+            <label>Published Date <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Aug 2, 2024" />
+          </div>
+        </div>
+
+        <div class="section-divider">
+          Post 3 — transform-renewal-meetings-rx-cost-saving
+        </div>
+        <div class="field-group">
+          <label>Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Transform your renewal meetings with Rx Cost-Saving strategies by using Aurora Health | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Do you find renewal meetings daunting and repetitive? If you're a self-funded broker, TPA, Stop Loss Provider, Benefits...</textarea
+          >
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Author <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Aurora Health Team" />
+          </div>
+          <div class="field-group">
+            <label>Published Date <span class="tag tag-og">OG</span></label
+            ><input type="text" value="Jul 31, 2024" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 5: CONTACT ═══════════════════════════════════ -->
+    <div class="page-section" data-search="contact get prescription help">
+      <div class="page-header" onclick="toggleSection('p5')">
+        <div class="page-header-left">
+          <div class="page-num">5</div>
+          <div>
+            <h2>Contact</h2>
+            <span class="page-url">https://aurorahealth.us/contact</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p5-icon">▼</span>
+      </div>
+      <div class="page-body" id="p5">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p5-title"
+            value="Contact Aurora Health | Get Prescription Help Today"
+            oninput="
+              markModified(this);
+              updateCounter('p5-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p5-title-c">51 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Contact Aurora Health to get help navigating high-cost medication challenges. Our team is ready to connect you with financial assistance and prescription advocacy support.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="contact Aurora Health, prescription help, medication assistance contact, get help with medication costs"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/contact"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Contact Aurora Health | Get Prescription Help Today"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Contact Aurora Health to get help navigating high-cost medication challenges. Our team is ready to connect you with financial assistance and prescription advocacy support.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Contact Aurora Health | Get Prescription Help Today"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Contact Aurora Health to get help navigating high-cost medication challenges. Our team is ready to connect you with financial assistance and prescription advocacy support.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 6: MEDICARE ══════════════════════════════════ -->
+    <div
+      class="page-section"
+      data-search="medicare part d 2025 2000 cap drug plan"
+    >
+      <div class="page-header" onclick="toggleSection('p6')">
+        <div class="page-header-left">
+          <div class="page-num">6</div>
+          <div>
+            <h2>Medicare</h2>
+            <span class="page-url">https://aurorahealth.us/medicare</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p6-icon">▼</span>
+      </div>
+      <div class="page-body" id="p6">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p6-title"
+            value="2025 Medicare Part D $2,000 Cap Explained | Aurora Health"
+            oninput="
+              markModified(this);
+              updateCounter('p6-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p6-title-c">57 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Understand the 2025 Medicare Part D $2,000 out-of-pocket cap and what it means for your prescription drug coverage. Get expert guidance from Aurora Health.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Medicare Part D 2025, $2000 out-of-pocket cap, Medicare prescription coverage, Medicare drug plan changes, Medicare Part D explained"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/medicare"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="2025 Medicare Part D $2,000 Cap Explained | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Understand the 2025 Medicare Part D $2,000 out-of-pocket cap and what it means for your prescription drug coverage. Get expert guidance from Aurora Health.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="2025 Medicare Part D $2,000 Cap Explained | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Understand the 2025 Medicare Part D $2,000 out-of-pocket cap and what it means for your prescription drug coverage. Get expert guidance from Aurora Health.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 7: PROGRAMS ══════════════════════════════════ -->
+    <div class="page-section" data-search="programs metallic rx savings">
+      <div class="page-header" onclick="toggleSection('p7')">
+        <div class="page-header-left">
+          <div class="page-num">7</div>
+          <div>
+            <h2>Programs</h2>
+            <span class="page-url">https://aurorahealth.us/programs</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p7-icon">▼</span>
+      </div>
+      <div class="page-body" id="p7">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p7-title"
+            value="Metallic Programs | Rx Savings Programs"
+            oninput="
+              markModified(this);
+              updateCounter('p7-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p7-title-c">39 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Explore Aurora Health's Metallic Programs — tailored prescription cost-saving strategies including global sourcing and financial assistance for every coverage tier.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="metallic programs, Rx savings programs, prescription cost savings, drug cost reduction, global sourcing medications, Aurora Health programs"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/programs"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Metallic Programs | Rx Savings Programs"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Explore Aurora Health's Metallic Programs — tailored prescription cost-saving strategies including global sourcing and financial assistance for every coverage tier.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Metallic Programs | Rx Savings Programs"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Explore Aurora Health's Metallic Programs — tailored prescription cost-saving strategies including global sourcing and financial assistance for every coverage tier.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 8: REGISTER ══════════════════════════════════ -->
+    <div
+      class="page-section"
+      data-search="register patient registration intake form"
+    >
+      <div class="page-header" onclick="toggleSection('p8')">
+        <div class="page-header-left">
+          <div class="page-num">8</div>
+          <div>
+            <h2>Patient Registration</h2>
+            <span class="page-url">https://aurorahealth.us/register</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-red">No-Index (intentional)</span>
+          <span class="badge badge-gray">No Follow</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p8-icon">▼</span>
+      </div>
+      <div class="page-body" id="p8">
+        <div class="note-box">
+          This page is intentionally excluded from search engine indexing. It is
+          a patient intake/conversion form — indexing it would expose sensitive
+          form pages in search results and waste crawl budget.
+        </div>
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Patient Registration | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Register with Aurora Health to begin your eligibility screening for prescription cost assistance programs. Your information is private and never shared.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label
+            ><input type="checkbox" /> index —
+            <span style="color: #dc2626; font-size: 12px"
+              >OFF — page excluded from Google</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /> follow —
+            <span style="color: #dc2626; font-size: 12px">OFF</span></label
+          >
+        </div>
+        <div class="note-box">
+          Also excluded from robots.txt: <code>Disallow: /register</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 9: WE HELP — ADVISORS ═══════════════════════ -->
+    <div
+      class="page-section"
+      data-search="advisors benefit brokers prescription cost strategy"
+    >
+      <div class="page-header" onclick="toggleSection('p9')">
+        <div class="page-header-left">
+          <div class="page-num">9</div>
+          <div>
+            <h2>We Help — Advisors</h2>
+            <span class="page-url"
+              >https://aurorahealth.us/we-help/advisors</span
+            >
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p9-icon">▼</span>
+      </div>
+      <div class="page-body" id="p9">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p9-title"
+            value="Prescription Cost Strategy for Benefit Advisors"
+            oninput="
+              markModified(this);
+              updateCounter('p9-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p9-title-c">48 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health empowers benefit advisors with proven Rx cost-containment strategies that protect Plan Sponsors and their members — without shifting burden onto employees.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="benefit advisors, prescription cost strategy, Rx cost containment for advisors, plan sponsor Rx savings, specialty medication savings, broker prescription advocacy"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/we-help/advisors"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Prescription Cost Strategy for Benefit Advisors"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health empowers benefit advisors with proven Rx cost-containment strategies that protect Plan Sponsors and their members — without shifting burden onto employees.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Prescription Cost Strategy for Benefit Advisors"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health empowers benefit advisors with proven Rx cost-containment strategies that protect Plan Sponsors and their members — without shifting burden onto employees.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 10: WE HELP — EMPLOYER ══════════════════════ -->
+    <div
+      class="page-section"
+      data-search="employers self-funded prescription costs workforce"
+    >
+      <div class="page-header" onclick="toggleSection('p10')">
+        <div class="page-header-left">
+          <div class="page-num">10</div>
+          <div>
+            <h2>We Help — Employers</h2>
+            <span class="page-url"
+              >https://aurorahealth.us/we-help/employer</span
+            >
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p10-icon">▼</span>
+      </div>
+      <div class="page-body" id="p10">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p10-title"
+            value="Prescription Cost Solutions for Self-Funded Employers"
+            oninput="
+              markModified(this);
+              updateCounter('p10-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p10-title-c">53 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health partners with self-funded employers to reduce high-cost prescription drug expenses while maintaining employee access to critical medications.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="self-funded employer prescription costs, employee medication assistance, Rx cost reduction employers, high-cost drug solutions, employer prescription advocacy"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/we-help/employer"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Prescription Cost Solutions for Self-Funded Employers"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health partners with self-funded employers to reduce high-cost prescription drug expenses while maintaining employee access to critical medications.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Prescription Cost Solutions for Self-Funded Employers"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health partners with self-funded employers to reduce high-cost prescription drug expenses while maintaining employee access to critical medications.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 11: WE HELP — INDIVIDUALS ═══════════════════ -->
+    <div
+      class="page-section"
+      data-search="individuals families affordable prescription medication help"
+    >
+      <div class="page-header" onclick="toggleSection('p11')">
+        <div class="page-header-left">
+          <div class="page-num">11</div>
+          <div>
+            <h2>We Help — Individuals</h2>
+            <span class="page-url"
+              >https://aurorahealth.us/we-help/individuals</span
+            >
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-green">Indexed</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-blue">Twitter ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p11-icon">▼</span>
+      </div>
+      <div class="page-body" id="p11">
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            id="p11-title"
+            value="Affordable Prescription Help for Individuals &amp; Families"
+            oninput="
+              markModified(this);
+              updateCounter('p11-title-c', this.value, 60);
+            "
+          />
+          <div class="char-counter" id="p11-title-c">56 / 60 chars</div>
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health connects individuals and families with financial assistance programs to reduce or eliminate out-of-pocket prescription medication costs.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Keywords <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="individual prescription help, affordable medication for individuals, patient financial assistance, reduce Rx costs, medication affordability for families"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/we-help/individuals"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph (Social Share)</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input
+            type="text"
+            value="Affordable Prescription Help for Individuals &amp; Families"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health connects individuals and families with financial assistance programs to reduce or eliminate out-of-pocket prescription medication costs.</textarea
+          >
+        </div>
+        <div class="section-divider">Twitter Card</div>
+        <div class="field-group">
+          <label>Twitter Title <span class="tag tag-tw">Twitter</span></label>
+          <input
+            type="text"
+            value="Affordable Prescription Help for Individuals &amp; Families"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label
+            >Twitter Description <span class="tag tag-tw">Twitter</span></label
+          >
+          <textarea rows="2" oninput="markModified(this)">
+Aurora Health connects individuals and families with financial assistance programs to reduce or eliminate out-of-pocket prescription medication costs.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label><input type="checkbox" checked /> index</label>
+          <label><input type="checkbox" checked /> follow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 12: PRIVACY ══════════════════════════════════ -->
+    <div class="page-section" data-search="privacy policy legal">
+      <div class="page-header" onclick="toggleSection('p12')">
+        <div class="page-header-left">
+          <div class="page-num">12</div>
+          <div>
+            <h2>Privacy Policy</h2>
+            <span class="page-url">https://aurorahealth.us/privacy</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-red">No-Index (legal page)</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p12-icon">▼</span>
+      </div>
+      <div class="page-body" id="p12">
+        <div class="note-box">
+          Legal pages are intentionally set to <code>noindex, nofollow</code> —
+          they should not appear in search results.
+        </div>
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Privacy Policy | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Read the Privacy Policy for Aurora Health. Learn how we collect, use, and protect your information.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/privacy"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input type="text" value="Privacy Policy | Aurora Health" />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2">
+Read the Privacy Policy for Aurora Health. Learn how we collect, use, and protect your information.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label
+            ><input type="checkbox" /> index —
+            <span style="color: #dc2626; font-size: 12px"
+              >OFF — legal page</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /> follow —
+            <span style="color: #dc2626; font-size: 12px">OFF</span></label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE 13: TERMS ════════════════════════════════════ -->
+    <div class="page-section" data-search="terms conditions legal">
+      <div class="page-header" onclick="toggleSection('p13')">
+        <div class="page-header-left">
+          <div class="page-num">13</div>
+          <div>
+            <h2>Terms &amp; Conditions</h2>
+            <span class="page-url">https://aurorahealth.us/terms</span>
+          </div>
+        </div>
+        <div class="page-badges">
+          <span class="badge badge-red">No-Index (legal page)</span>
+          <span class="badge badge-blue">OG ✓</span>
+          <span class="badge badge-green">Canonical ✓</span>
+        </div>
+        <span style="font-size: 18px; color: #6b7280" id="p13-icon">▼</span>
+      </div>
+      <div class="page-body" id="p13">
+        <div class="note-box">
+          Legal pages are intentionally set to <code>noindex, nofollow</code>.
+        </div>
+        <div class="section-divider">Core SEO</div>
+        <div class="field-group">
+          <label>Page Title <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="Terms &amp; Conditions | Aurora Health"
+            oninput="markModified(this)"
+          />
+        </div>
+        <div class="field-group">
+          <label>Meta Description <span class="tag tag-seo">SEO</span></label>
+          <textarea rows="2" oninput="markModified(this)">
+Read the Terms and Conditions for using the Aurora Health website and services.</textarea
+          >
+        </div>
+        <div class="field-group">
+          <label>Canonical URL <span class="tag tag-seo">SEO</span></label>
+          <input
+            type="text"
+            value="https://aurorahealth.us/terms"
+            readonly
+            style="font-family: monospace; background: #f3f4f6; color: #6b7280"
+          />
+        </div>
+        <div class="section-divider">Open Graph</div>
+        <div class="field-group">
+          <label>OG Title <span class="tag tag-og">OG</span></label>
+          <input type="text" value="Terms &amp; Conditions | Aurora Health" />
+        </div>
+        <div class="field-group">
+          <label>OG Description <span class="tag tag-og">OG</span></label>
+          <textarea rows="2">
+Read the Terms and Conditions for using the Aurora Health website and services.</textarea
+          >
+        </div>
+        <div class="section-divider">Robots Directive</div>
+        <div class="robots-row">
+          <label
+            ><input type="checkbox" /> index —
+            <span style="color: #dc2626; font-size: 12px"
+              >OFF — legal page</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /> follow —
+            <span style="color: #dc2626; font-size: 12px">OFF</span></label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TECHNICAL FILES ═══════════════════════════════════ -->
+    <div class="global-section">
+      <div class="global-header" onclick="toggleSection('tech')">
+        <div class="global-num">T</div>
+        <h2>Technical SEO Files — robots.txt &amp; sitemap.xml</h2>
+        <span
+          style="margin-left: auto; font-size: 18px; color: #92400e"
+          id="tech-icon"
+          >▼</span
+        >
+      </div>
+      <div class="page-body" id="tech">
+        <div class="field-group">
+          <label
+            >robots.txt (auto-generated at /robots.txt)
+            <span class="tag tag-tech">Technical</span></label
+          >
+          <div class="json-block">
+            User-agent: * Allow: / Disallow: /register Sitemap:
+            https://aurorahealth.us/sitemap.xml
+          </div>
+        </div>
+        <div class="field-group">
+          <label
+            >sitemap.xml Routes (auto-generated at /sitemap.xml)
+            <span class="tag tag-tech">Technical</span></label
+          >
+          <div class="json-block">
+            https://aurorahealth.us/ priority=1.0 weekly
+            https://aurorahealth.us/aurora-helps priority=0.8 monthly
+            https://aurorahealth.us/blogs priority=0.9 weekly
+            https://aurorahealth.us/contact priority=0.7 monthly
+            https://aurorahealth.us/medicare priority=0.8 monthly
+            https://aurorahealth.us/programs priority=0.8 monthly
+            https://aurorahealth.us/we-help/advisors priority=0.8 monthly
+            https://aurorahealth.us/we-help/employer priority=0.8 monthly
+            https://aurorahealth.us/we-help/individuals priority=0.8 monthly —
+            Blog Posts —
+            https://aurorahealth.us/blogs/rising-costs-glp1-medications
+            https://aurorahealth.us/blogs/employee-benefit-brokers-partner-aurora-health
+            https://aurorahealth.us/blogs/transform-renewal-meetings-rx-cost-saving
+            NOTE: /register, /privacy, /terms are excluded (noindex pages)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ CLIENT NOTES BOX ══════════════════════════════════ -->
+    <div class="global-section" style="margin-top: 24px">
+      <div
+        class="global-header"
+        onclick="toggleSection('notes')"
+        style="
+          background: linear-gradient(90deg, #f0fdf4, #ecfdf5);
+          border-color: #a7f3d0;
+        "
+      >
+        <div class="global-num" style="background: #059669">✎</div>
+        <h2 style="color: #065f46">Client Feedback &amp; Notes</h2>
+        <span
+          style="margin-left: auto; font-size: 18px; color: #065f46"
+          id="notes-icon"
+          >▼</span
+        >
+      </div>
+      <div class="page-body" id="notes">
+        <div class="field-group">
+          <label>General Notes / Requested Changes</label>
+          <textarea
+            rows="6"
+            placeholder="Add your feedback here — e.g. 'Change homepage title to...', 'Update Medicare description to include phone number...', etc."
+            style="font-size: 14px; line-height: 1.7"
+          ></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label>Reviewed By</label>
+            <input type="text" placeholder="Client name or reviewer" />
+          </div>
+          <div class="field-group">
+            <label>Review Date</label>
+            <input type="text" placeholder="e.g. April 24, 2026" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Approval Status</label>
+          <div class="robots-row">
+            <label><input type="radio" name="approval" /> Approved as-is</label>
+            <label
+              ><input type="radio" name="approval" /> Approved with noted
+              changes</label
+            >
+            <label
+              ><input type="radio" name="approval" /> Revisions required</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Track original values
+      const originalValues = {};
+      document
+        .querySelectorAll('input[type="text"], textarea')
+        .forEach((el) => {
+          if (!el.readOnly) originalValues[el.id || Math.random()] = el.value;
+        });
+
+      function toggleSection(id) {
+        const body = document.getElementById(id);
+        const icon = document.getElementById(id + "-icon");
+        if (!body) return;
+        const isCollapsed = body.classList.contains("collapsed");
+        body.classList.toggle("collapsed", !isCollapsed);
+        if (icon) icon.textContent = isCollapsed ? "▼" : "▲";
+      }
+
+      function expandAll() {
+        document
+          .querySelectorAll(".page-body")
+          .forEach((el) => el.classList.remove("collapsed"));
+        document
+          .querySelectorAll('[id$="-icon"]')
+          .forEach((el) => (el.textContent = "▼"));
+      }
+
+      function collapseAll() {
+        document
+          .querySelectorAll(".page-body")
+          .forEach((el) => el.classList.add("collapsed"));
+        document
+          .querySelectorAll('[id$="-icon"]')
+          .forEach((el) => (el.textContent = "▲"));
+      }
+
+      function markModified(el) {
+        el.classList.add("modified");
+      }
+
+      function highlightModified() {
+        const modified = document.querySelectorAll(".modified");
+        if (modified.length === 0) {
+          alert("No fields have been edited yet.");
+          return;
+        }
+        modified.forEach((el) => {
+          el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          el.style.outline = "2px solid #f59e0b";
+          setTimeout(() => (el.style.outline = ""), 2000);
+        });
+        alert(modified.length + " field(s) have been edited.");
+      }
+
+      function resetAll() {
+        if (!confirm("Reset all changes to original values?")) return;
+        document
+          .querySelectorAll('input[type="text"], textarea')
+          .forEach((el) => {
+            if (!el.readOnly) {
+              el.classList.remove("modified");
+              el.style.outline = "";
+            }
+          });
+      }
+
+      function updateCounter(counterId, value, max) {
+        const counter = document.getElementById(counterId);
+        if (!counter) return;
+        const len = value
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">").length;
+        counter.textContent = len + " / " + max + " chars";
+        counter.className = "char-counter";
+        if (len > max) counter.classList.add("over");
+        else if (len > max * 0.9) counter.classList.add("warn");
+      }
+
+      function searchPages(query) {
+        const q = query.toLowerCase().trim();
+        document
+          .querySelectorAll(".page-section, .global-section")
+          .forEach((section) => {
+            if (!q) {
+              section.style.display = "";
+              return;
+            }
+            const text =
+              (section.dataset.search || "") + " " + section.textContent;
+            section.style.display = text.toLowerCase().includes(q)
+              ? ""
+              : "none";
+          });
+      }
+
+      // Initialize char counters on load
+      [
+        ["g-title-default", 60],
+        ["g-desc", 160],
+        ["p1-title", 60],
+        ["p2-title", 60],
+        ["p3-title", 60],
+        ["p5-title", 60],
+        ["p6-title", 60],
+        ["p7-title", 60],
+        ["p9-title", 60],
+        ["p10-title", 60],
+        ["p11-title", 60],
+      ].forEach(([id, max]) => {
+        const el = document.getElementById(id);
+        if (el) updateCounter(id + "-c", el.value, max);
+      });
+
+      // ── Print: swap inputs/textareas for full-height divs ──────────────────
+      window.addEventListener("beforeprint", function () {
+        document
+          .querySelectorAll('input[type="text"], textarea')
+          .forEach(function (el) {
+            var div = document.createElement("div");
+            div.className =
+              "print-value" + (el.readOnly ? " print-readonly" : "");
+            div.textContent = el.value;
+            el.parentNode.insertBefore(div, el.nextSibling);
+            el.setAttribute("data-print-hidden", "true");
+          });
+      });
+
+      window.addEventListener("afterprint", function () {
+        document.querySelectorAll(".print-value").forEach(function (div) {
+          div.remove();
+        });
+        document.querySelectorAll("[data-print-hidden]").forEach(function (el) {
+          el.removeAttribute("data-print-hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
